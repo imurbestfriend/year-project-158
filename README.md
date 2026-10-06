@@ -65,8 +65,8 @@
 | Направление | Инструменты |
 |---|---|
 | Модели и интерпретируемость | PyTorch, HuggingFace Transformers, TransformerLens / nnsight, SAELens |
-| Сервис | FastAPI, Gradio, Docker |
-| Эксперименты | MLflow, Triton Inference Server |
+| Сервис и инференс | FastAPI, Gradio, Docker, Triton Inference Server |
+| Логирование экспериментов | MLflow |
 
 Конкретная модель и набор SAE фиксируются на чекпойнте 2. Основной кандидат это семейство Gemma 2 с разложениями Gemma Scope.
 
