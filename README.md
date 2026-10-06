@@ -38,7 +38,7 @@
 
 | Роль | Участник | Контакты |
 |---|---|---|
-| Участник | Кубанов Алексей Алексеевич | [@github](https://github.com/) |
+| Участник | Кубанов Алексей Алексеевич | [@github](https://github.com/AKubax) |
 | Участник | Райков Михаил Александрович | [@github](https://github.com/m1rrray) |
 | Участник | Меликов Владислав Евгеньевич | [@github](https://github.com/imurbestfriend) |
 
