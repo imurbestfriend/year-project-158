@@ -4,4 +4,5 @@ pyarrow
 matplotlib
 huggingface_hub
 tokenizers
+pyyaml
 ipykernel
