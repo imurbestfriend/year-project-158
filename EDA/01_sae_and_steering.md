@@ -5,7 +5,7 @@
 ## Готовые SAE
 
 Для open-source моделей можно посмотреть [тут](https://decoderesearch.github.io/SAELens/latest/pretrained_saes/).
-Примеры работы с ними из библиотеки sae_lens есть в EDA.ipynb
+Примеры работы с ними из библиотеки sae_lens есть в [01_sae_and_steering.ipynb](01_sae_and_steering.ipynb)
 
 ## Хуки
 
