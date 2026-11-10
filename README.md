@@ -76,11 +76,12 @@
 
 | Путь | Содержимое |
 |---|---|
-| [`EDA/`](EDA) | Разведочный анализ, чекпойнт 2 |
-| [`EDA/01_sae_and_steering.ipynb`](EDA/01_sae_and_steering.ipynb) | Готовые SAE и хуки, разложение активаций Gemma 3 1B IT |
-| [`EDA/01_sae_and_steering.md`](EDA/01_sae_and_steering.md) | Обзор хуков, способов интерпретации признаков и интервенций |
-| [`EDA/02_sae_datasets.ipynb`](EDA/02_sae_datasets.ipynb) | Датасеты токсичности и отказа, разложение активаций GPT-2 Small |
-| [`EDA/03_steering_benchmarks.ipynb`](EDA/03_steering_benchmarks.ipynb) | Бенчмарки steering: AxBench, JailbreakBench, XSTest, CAA, промпты и рубрики LLM-судей |
+| [`EDA/EDA.ipynb`](EDA/EDA.ipynb) | Разведочный анализ, чекпойнт 2: общий ноутбук команды |
+| [`EDA/parts/`](EDA/parts) | Исходные части, из которых собран общий ноутбук |
+| [`EDA/parts/01_sae_and_steering.ipynb`](EDA/parts/01_sae_and_steering.ipynb) | Готовые SAE и хуки, разложение активаций Gemma 3 1B IT |
+| [`EDA/parts/01_sae_and_steering.md`](EDA/parts/01_sae_and_steering.md) | Обзор хуков, способов интерпретации признаков и интервенций |
+| [`EDA/parts/02_sae_datasets.ipynb`](EDA/parts/02_sae_datasets.ipynb) | Датасеты токсичности и отказа, разложение активаций GPT-2 Small |
+| [`EDA/parts/03_steering_benchmarks.ipynb`](EDA/parts/03_steering_benchmarks.ipynb) | Бенчмарки steering: AxBench, JailbreakBench, XSTest, CAA, промпты и рубрики LLM-судей |
 | [`src/sae_steering/`](src/sae_steering) | Пакет под общий код ноутбуков и сервиса, пока пустой |
 | `pyproject.toml`, `uv.lock` | Зависимости и их зафиксированные версии |
 
@@ -98,7 +99,7 @@ uv sync
 uv run pre-commit install
 ```
 
-Модели Gemma закрыты лицензией. Её нужно принять на страницах [google/gemma-3-1b-it](https://huggingface.co/google/gemma-3-1b-it) для ноутбука 01 и [google/gemma-2-2b-it](https://huggingface.co/google/gemma-2-2b-it) для ноутбука 03, затем войти с токеном:
+Модели Gemma закрыты лицензией. Её нужно принять на страницах [google/gemma-3-1b-it](https://huggingface.co/google/gemma-3-1b-it) для разделов 2–3 общего ноутбука и [google/gemma-2-2b-it](https://huggingface.co/google/gemma-2-2b-it), откуда разделы 4–5 берут только токенизатор, затем войти с токеном:
 
 ```bash
 uv run hf auth login
@@ -107,7 +108,7 @@ uv run hf auth login
 Ноутбуки открываются в JupyterLab или VS Code с ядром из `.venv`. Прогон целиком без интерфейса:
 
 ```bash
-uv run jupyter nbconvert --to notebook --execute --inplace EDA/01_sae_and_steering.ipynb
+uv run jupyter nbconvert --to notebook --execute --inplace EDA/EDA.ipynb
 ```
 
 На Linux torch ставится со сборкой под CUDA 13, ей нужен драйвер NVIDIA 580 или новее. Проверка:
