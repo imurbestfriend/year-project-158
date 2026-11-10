@@ -72,6 +72,54 @@
 
 ---
 
+## 📁 Структура репозитория
+
+| Путь | Содержимое |
+|---|---|
+| [`EDA/`](EDA) | Разведочный анализ, чекпойнт 2 |
+| [`EDA/01_sae_and_steering.ipynb`](EDA/01_sae_and_steering.ipynb) | Готовые SAE и хуки, разложение активаций Gemma 3 1B IT |
+| [`EDA/01_sae_and_steering.md`](EDA/01_sae_and_steering.md) | Обзор хуков, способов интерпретации признаков и интервенций |
+| [`EDA/02_sae_datasets.ipynb`](EDA/02_sae_datasets.ipynb) | Датасеты токсичности и отказа, разложение активаций GPT-2 Small |
+| [`EDA/03_steering_benchmarks.ipynb`](EDA/03_steering_benchmarks.ipynb) | Бенчмарки steering: AxBench, JailbreakBench, XSTest, CAA, промпты и рубрики LLM-судей |
+| [`src/sae_steering/`](src/sae_steering) | Пакет под общий код ноутбуков и сервиса, пока пустой |
+| `pyproject.toml`, `uv.lock` | Зависимости и их зафиксированные версии |
+
+Зависимости разбиты на группы: в основных то, что нужно сервису, в `eda` ноутбуки, в `dev` линтер, тесты и pre-commit. `uv sync` ставит все три.
+
+## 🚀 Запуск
+
+Окружение собирается через [uv](https://docs.astral.sh/uv/), Python 3.12:
+
+```bash
+uv sync
+```
+
+```bash
+uv run pre-commit install
+```
+
+Модели Gemma закрыты лицензией. Её нужно принять на страницах [google/gemma-3-1b-it](https://huggingface.co/google/gemma-3-1b-it) для ноутбука 01 и [google/gemma-2-2b-it](https://huggingface.co/google/gemma-2-2b-it) для ноутбука 03, затем войти с токеном:
+
+```bash
+uv run hf auth login
+```
+
+Ноутбуки открываются в JupyterLab или VS Code с ядром из `.venv`. Прогон целиком без интерфейса:
+
+```bash
+uv run jupyter nbconvert --to notebook --execute --inplace EDA/01_sae_and_steering.ipynb
+```
+
+На Linux torch ставится со сборкой под CUDA 13, ей нужен драйвер NVIDIA 580 или новее. Проверка:
+
+```bash
+uv run python -c "import torch; print(torch.cuda.is_available())"
+```
+
+Новая зависимость добавляется через `uv add <пакет>` или `uv add --group eda <пакет>`, `pyproject.toml` и `uv.lock` коммитятся вместе.
+
+---
+
 <div align="center">
 
 *НИУ ВШЭ · Факультет компьютерных наук · 2026/27*
