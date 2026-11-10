@@ -77,7 +77,7 @@
 | Путь | Содержимое |
 |---|---|
 | [`EDA/EDA.ipynb`](EDA/EDA.ipynb) | Разведочный анализ, чекпойнт 2: общий ноутбук команды |
-| [`EDA/report.pdf`](EDA/report.pdf) | Практическая применимость и обзор по пунктам плана, исходник в [`EDA/report.md`](EDA/report.md) |
+| [`EDA/report.pdf`](EDA/report.pdf) | Практическая применимость и обзор по пунктам плана, исходник в [`EDA/README.md`](EDA/README.md) |
 | [`EDA/parts/`](EDA/parts) | Исходные части, из которых собран общий ноутбук |
 | [`EDA/parts/01_sae_and_steering.ipynb`](EDA/parts/01_sae_and_steering.ipynb) | Готовые SAE и хуки, разложение активаций Gemma 3 1B IT |
 | [`EDA/parts/01_sae_and_steering.md`](EDA/parts/01_sae_and_steering.md) | Обзор хуков, способов интерпретации признаков и интервенций |
